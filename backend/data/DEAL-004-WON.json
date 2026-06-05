@@ -1,0 +1,44 @@
+{
+  "deal_id": "DEAL-004",
+  "company": "Zara Organics (D2C)",
+  "contact": "Meera Soni (VP Sales)",
+  "decision_maker": "Arjun Bhatia (Founder & CEO)",
+  "deal_value": "$31,500",
+  "status": "WON",
+  "won_reason": "Fast trust-building with founder + flexible contract structure",
+  "duration_days": 44,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-09-02",
+      "notes": "Meera reached out after seeing our case study on a D2C brand. Team of 18 sales reps, no CRM — tracking on Excel sheets. Losing track of repeat customers. Founder Arjun involved in day-to-day sales still. Timeline: needed something running before Diwali season (Oct 20).",
+      "red_flags": ["tight timeline — 7 weeks to Diwali"],
+      "competitor_mentions": ["Zoho CRM"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-09-10",
+      "notes": "Demo with Meera + Arjun. Arjun came in skeptical — had tried Zoho 2 years ago, bad implementation experience. We addressed this head-on: showed our 14-day onboarding guarantee in writing. He asked about WhatsApp integration for customer follow-ups — we demoed it live. Mood shifted.",
+      "red_flags": ["founder has prior bad CRM experience"],
+      "competitor_mentions": ["Zoho CRM"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-09-19",
+      "notes": "Pricing call. Arjun pushed back on annual commitment — startup, cash flow tight. We offered quarterly billing at a 10% premium. He accepted immediately. Also agreed to be a reference customer in exchange for a 5% discount. Deal signed same day.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Addressing prior bad vendor experience head-on = trust accelerator",
+    "14-day onboarding guarantee in writing removed biggest objection",
+    "Live WhatsApp demo hit the exact emotional need — turned the founder",
+    "Flexible billing structure (quarterly) unlocked a cash-strapped founder",
+    "Reference customer deal is a win-win — discount for social proof",
+    "Tight timeline was urgency, not a red flag — lean into it"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "deal_id": "DEAL-002",
+  "company": "SwiftMove Logistics",
+  "contact": "Priya Nair (Head of Operations)",
+  "decision_maker": "Vikram Desai (CEO)",
+  "deal_value": "$62,000",
+  "status": "WON",
+  "won_reason": "Strong ROI case + champion advocacy from Priya",
+  "duration_days": 67,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-07-10",
+      "notes": "Discovery call with Priya. Core pain: manual route reconciliation taking 3 hrs/day per dispatcher, 12 dispatchers total. She estimated $180K/year in wasted labor. Budget pre-approved up to $75K. CEO sign-off needed above $50K.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-07-22",
+      "notes": "Demo tailored to logistics workflow. Priya brought 2 dispatchers — they loved the real-time tracking module. Built live ROI calculator on the call: 3 hrs x 12 dispatchers x $18/hr x 250 days = $162K savings vs $62K cost. Priya said she will champion internally.",
+      "red_flags": [],
+      "competitor_mentions": ["FarEye"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-08-05",
+      "notes": "CEO Vikram joined. Priya had already briefed him with our ROI numbers. He asked two sharp questions: implementation downtime risk and data security. We had both answers ready. He asked for a 1-page exec summary, sent within 24 hours.",
+      "red_flags": ["CEO asked about downtime — need to prep case studies"],
+      "competitor_mentions": ["FarEye"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-08-17",
+      "notes": "Contract review. Legal had minor MSA edits — liability cap clause. Resolved in 48 hours. Vikram signed. Priya personally messaged saying she pushed hard for us internally.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Pre-calculated ROI before call 2 = deal accelerator",
+    "Priya as champion did the internal selling for us",
+    "CEO arriving prepared (briefed by champion) = fast close",
+    "24-hour turnaround on exec summary builds trust",
+    "Having downtime + security answers ready = no stall at CEO level"
+  ]
+}

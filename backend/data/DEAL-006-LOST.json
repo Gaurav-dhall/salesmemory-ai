@@ -1,0 +1,68 @@
+{
+  "deal_id": "DEAL-006",
+  "company": "NovaSpark EdTech",
+  "contact": "Rohit Sharma (Product Manager)",
+  "decision_maker": "Geeta Pillai (VP Product)",
+  "deal_value": "$54,000",
+  "status": "LOST",
+  "lost_reason": "Champion (Rohit) left the company — deal restarted with new stakeholder, lost momentum",
+  "duration_days": 102,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-06-15",
+      "notes": "Rohit reached out after our webinar. EdTech platform needs analytics layer for learner engagement data. 200K monthly active users, no product analytics in place. Rohit is the internal driver. VP Geeta aware but not involved yet. Timeline: Q4 rollout.",
+      "red_flags": ["VP not engaged", "single-threaded through Rohit only"],
+      "competitor_mentions": ["Mixpanel", "Amplitude"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-07-03",
+      "notes": "Full product demo. Rohit brought 2 engineers. Our learner funnel analytics and cohort retention views got strong reaction. Rohit said this is the right tool. Asked for a pricing proposal. Still no VP involvement — Rohit said he will handle it.",
+      "red_flags": ["still single-threaded — red flag escalating", "VP not looped in after 2 calls"],
+      "competitor_mentions": ["Amplitude"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-07-22",
+      "notes": "Pricing proposal sent. Rohit liked it. Suddenly went quiet for 10 days. When he responded, message was brief. Asked if everything was okay — he said he was dealing with internal changes. Vague.",
+      "red_flags": ["10-day silence post-proposal", "vague response about internal changes", "no VP meeting scheduled"],
+      "competitor_mentions": [],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-08-10",
+      "notes": "Rohit informed us he is leaving NovaSpark. Introduced us over email to Preethi Iyer (new PM). Preethi had no context on the deal, had different priorities, and was skeptical about the budget. We had to restart discovery entirely.",
+      "red_flags": ["champion exit — deal de-risked entirely", "new stakeholder cold start"],
+      "competitor_mentions": ["Mixpanel"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-08-28",
+      "notes": "Discovery call with Preethi. She wanted to go back to basics. Competitive re-evaluation started. She mentioned Mixpanel was already being trialed by another team internally. We could not compete with an internal trial already in progress.",
+      "red_flags": ["competitor already trialing internally"],
+      "competitor_mentions": ["Mixpanel"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 6,
+      "date": "2024-09-26",
+      "notes": "Lost to Mixpanel. Preethi chose the tool already being trialed by another team — political ease. Rohit, ironically, messaged from his new job asking if we could work together there.",
+      "red_flags": [],
+      "competitor_mentions": ["Mixpanel"],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "Single-threaded champion = existential deal risk — push for multi-stakeholder by call 2",
+    "VP never engaged after 3 calls = should have escalated or paused",
+    "10-day silence post-proposal = flight risk signal, should have called immediately",
+    "Champion exit requires immediate executive escalation, not email intro",
+    "Competitor internal trial = near-impossible to displace — qualify early",
+    "Strong champion ≠ safe deal — always build parallel executive relationship"
+  ]
+}

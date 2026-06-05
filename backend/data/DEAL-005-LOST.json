@@ -1,0 +1,60 @@
+{
+  "deal_id": "DEAL-005",
+  "company": "Meridian Pharma Ltd",
+  "contact": "Sanjay Rao (IT Manager)",
+  "decision_maker": "Kavitha Nambiar (CTO)",
+  "deal_value": "$110,000",
+  "status": "LOST",
+  "lost_reason": "No decision — internal hiring freeze halted all software purchases",
+  "duration_days": 118,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-05-06",
+      "notes": "Sanjay initiated contact. Legacy ERP causing integration nightmares with new cloud warehouse system. Pain is real and urgent — monthly reconciliation takes 6 days manually. He estimated $200K/year in operational loss. Said CTO Kavitha is supportive. Budget TBD.",
+      "red_flags": ["budget TBD — no confirmed number", "CTO not on call"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-05-22",
+      "notes": "Technical deep-dive with Sanjay + 2 engineers. Integration architecture questions answered well. Our solution fit was strong. CTO still not joining — Sanjay said she is in a board review cycle. Asked us to prepare a technical proposal.",
+      "red_flags": ["CTO avoiding calls — 2nd time not present", "board review = potential org change signal"],
+      "competitor_mentions": ["SAP Integration Suite"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-06-10",
+      "notes": "Submitted 28-page technical proposal. Sanjay loved it. CTO finally joined — 15 minutes, asked 2 questions, left early. She seemed distracted. Sanjay messaged later that internal discussions are ongoing. No clear next step defined.",
+      "red_flags": ["no clear next step agreed", "CTO disengaged in meeting", "28-page proposal may be too heavy"],
+      "competitor_mentions": ["SAP Integration Suite"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-07-01",
+      "notes": "Follow-up call. Sanjay revealed that there is a company-wide hiring and spending freeze following a regulatory audit. All non-critical purchases paused. He is personally supportive but his hands are tied. No timeline for resume.",
+      "red_flags": ["spending freeze — external blocker", "no timeline to unfreeze"],
+      "competitor_mentions": [],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-08-02",
+      "notes": "Last check-in. Freeze still in place. Sanjay apologized, said to reconnect in Q1 2025. Marked as lost for this year. Relationship intact.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "CTO not on first 2 calls = early warning of disengagement at top",
+    "Board review cycle mentioned early = should have flagged org instability risk",
+    "28-page technical proposal to an absent decision-maker = effort wasted",
+    "No budget confirmed after 3 calls = stall signal ignored",
+    "Should have asked for a multi-stakeholder meeting by call 2",
+    "Spending freezes are unwinnable — exit early, preserve relationship for next cycle"
+  ]
+}

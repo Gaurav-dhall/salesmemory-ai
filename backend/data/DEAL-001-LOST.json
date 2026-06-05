@@ -1,0 +1,50 @@
+{
+  "deal_id": "DEAL-001",
+  "company": "FinEdge Technologies",
+  "contact": "Rajesh Kumar (VP Engineering)",
+  "decision_maker": "Anita Shah (CFO)",
+  "deal_value": "$85,000",
+  "status": "LOST",
+  "lost_reason": "Went with competitor - pricing",
+  "duration_days": 94,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-08-01",
+      "notes": "Great discovery call. Rajesh loves our CI/CD features. Pain: 4 hour deploy cycles. Budget: Has it, CFO approval needed.",
+      "red_flags": ["CFO not on call", "budget approval pending"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-08-15",
+      "notes": "Demo went well. CFO joined last 10 mins, asked about ROI. We didn't have numbers ready. Competitor Jenkins mentioned.",
+      "red_flags": ["CFO asked ROI - we had no answer", "competitor mentioned"],
+      "competitor_mentions": ["Jenkins"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-09-01",
+      "notes": "Timeline slipping. Rajesh says CFO wants more data. We sent generic brochure instead of custom ROI calc.",
+      "red_flags": ["timeline slipping", "sent generic material", "CFO disengaged"],
+      "competitor_mentions": ["Jenkins", "GitHub Actions"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-09-20",
+      "notes": "Lost. CFO chose Jenkins - 40% cheaper. Rajesh apologetic.",
+      "red_flags": [],
+      "competitor_mentions": ["Jenkins"],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "CFO not engaged by call 2 = danger sign",
+    "No ROI answer ready = lost deal",
+    "Generic materials dont work with technical CFOs",
+    "2+ competitor mentions = escalate immediately"
+  ]
+}

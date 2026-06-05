@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-003",
+  "company": "Bharat Precision Works",
+  "contact": "Deepak Mehta (HR Director)",
+  "decision_maker": "Sunita Agarwal (MD)",
+  "deal_value": "$48,000",
+  "status": "WON",
+  "won_reason": "Competitive bake-off win + pilot data sealed the deal",
+  "duration_days": 81,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-06-03",
+      "notes": "Inbound lead — Deepak found us via LinkedIn. 850 employees across 3 plants. Pain: attendance tracking still on paper registers, payroll errors every cycle costing ~$8K/month in corrections. Evaluating 3 vendors. Asked for pilot.",
+      "red_flags": ["3 vendors in evaluation — competitive"],
+      "competitor_mentions": ["greytHR", "Keka"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-06-18",
+      "notes": "Structured demo focused on plant floor biometric integration — our key differentiator vs greytHR. Deepak acknowledged our integration story was strongest. MD Sunita not yet involved. Proposed 2-week paid pilot at Plant 1 (280 employees), $0 risk.",
+      "red_flags": ["MD not engaged yet", "Keka offering free pilot"],
+      "competitor_mentions": ["greytHR", "Keka"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-07-02",
+      "notes": "Mid-pilot check-in. Pilot results strong: 0 payroll errors in 2 weeks vs avg 14 errors prior. Deepak visibly excited. Shared pilot report with MD — she asked for a meeting. Keka still in running but no pilot data.",
+      "red_flags": [],
+      "competitor_mentions": ["Keka"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-07-18",
+      "notes": "Meeting with MD Sunita. Led with pilot data — 0 errors, 94% employee adoption rate in 2 weeks. She asked one question: can we handle PF/ESI compliance auto-filing? We said yes and demoed it live. She said proceed.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-07-24",
+      "notes": "PO received. Deepak said MD appreciated that we came with data, not just slides. Annual contract signed for all 3 plants.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Paid pilot turned into a proof — hardest objection handled with data",
+    "Plant floor biometric integration = key differentiator, lead with it",
+    "MD meeting with real pilot numbers = no price negotiation needed",
+    "Live compliance demo at MD level closed the loop instantly",
+    "Against free pilot competitor, our data beat their price"
+  ]
+}
