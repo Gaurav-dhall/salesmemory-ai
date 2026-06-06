@@ -116,13 +116,13 @@ export default function Patterns() {
         initial={false}
         animate={{ marginLeft: sidebarW }}
         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-        style={{ flex: 1, background: 'var(--color-bg)', minHeight: '100vh' }}
+        style={{ flex: 1, background: 'var(--color-bg)', minHeight: '100vh', minWidth: 0, overflow: 'hidden' }}
       >
         <TopBar />
         <div className="page-content">
 
           {/* ── Top Row ── */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
             <motion.div variants={fadeUp} custom={0} initial="hidden" animate="visible">
               <h1 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 32, fontWeight: 700, color: 'var(--color-text-primary)', margin: 0, lineHeight: 1.2 }}>
                 Deal Patterns
