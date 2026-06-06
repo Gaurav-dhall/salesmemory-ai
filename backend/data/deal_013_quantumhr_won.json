@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-013",
+  "company": "QuantumHR Technologies",
+  "contact": "Siddharth Rao (HR Tech Lead)",
+  "decision_maker": "Amanda Torres (CHRO)",
+  "deal_value": "$110,000",
+  "status": "WON",
+  "won_reason": "Multi-threaded relationships built across 3 stakeholders — when champion went on leave, deal did not stall",
+  "duration_days": 95,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-06-03",
+      "notes": "Siddharth is the champion — strong use case for HR analytics. In Call 1 we proactively asked: besides you, who else will use this and who has budget authority? He named Amanda Torres (CHRO) and Dev Kapoor (Finance BP). We scheduled separate introductory calls with both immediately.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-06-14",
+      "notes": "Separate call with Amanda Torres. She cares about employee retention data and board reporting. We tailored our pitch entirely to her priorities — not features, but outcomes. She was impressed. Separately called Dev Kapoor and walked him through ROI model. Both are now independently warm.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-06-28",
+      "notes": "Siddharth went on medical leave unexpectedly — 3 weeks. In past this would have killed the deal. But Amanda and Dev are both already engaged. Amanda asked us to continue working with her directly. Deal did not miss a beat.",
+      "red_flags": ["champion on leave"],
+      "competitor_mentions": ["Workday Analytics"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-07-15",
+      "notes": "Full group call — Amanda, Dev, and Siddharth back from leave. We presented a combined stakeholder summary showing how the product addresses each person's specific goal. Workday Analytics was mentioned — we had already prepared a comparison doc. Amanda asked about implementation support.",
+      "red_flags": [],
+      "competitor_mentions": ["Workday Analytics"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-09-05",
+      "notes": "WON. Amanda signed off. She told us that the fact we had relationships with all 3 stakeholders — not just Siddharth — made them feel we were a long-term partner, not just a salesperson. Annual contract with expansion clause signed.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Multi-thread from Call 1 — always ask who else is involved and meet them separately",
+    "Single-threaded deals die when the champion goes absent — build redundancy",
+    "Each stakeholder needs their own tailored value story, not the same pitch",
+    "When champion goes on leave, multi-threading is what saves the deal",
+    "Expansion clause in contract is easier to get when trust is high post strong sales process"
+  ]
+}

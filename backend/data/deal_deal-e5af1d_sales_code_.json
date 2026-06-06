@@ -1,0 +1,32 @@
+{
+  "deal_id": "DEAL-E5AF1D",
+  "company": "SALES CODE ",
+  "contact": "Gaurav Dhall",
+  "decision_maker": "CEO JOHN SMITH ",
+  "deal_value": "10000",
+  "status": "ACTIVE",
+  "duration_days": 0,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-06-06",
+      "notes": "call started gaurav was explained with the beb product john smith said lets fix the deal",
+      "red_flags": [
+        "cfo not on call"
+      ],
+      "competitor_mentions": [
+        "sales force"
+      ],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-06-06",
+      "notes": "gaurav agreed to bring cfo , he was showing great interest in our services asked for completion timeline ",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    }
+  ],
+  "lessons_learned": []
+}

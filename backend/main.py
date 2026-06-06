@@ -341,7 +341,7 @@ async def analyze_deal(deal_data: dict):
     )
 
     logger.info(f"🔍 Searching Hindsight for: {query[:100]}...")
-    raw_memories = search_memory(query, limit=5)
+    raw_memories = search_memory(query, limit=10)  # fetch more so we can filter down to 5 named deals
     logger.info(f"📚 Retrieved {len(raw_memories)} memories from Hindsight")
 
     # Extract only the text from each memory to keep the prompt small.
@@ -377,10 +377,35 @@ Provide a JSON object with:
     )
 
     analysis = json.loads(response.choices[0].message.content)
+
+    similar_deals = []
+    for m in raw_memories:
+        if not isinstance(m, dict):
+            continue
+        meta = m.get("metadata", {})
+        company = meta.get("company", "").strip()
+        status = meta.get("status", "").strip()
+
+        # Skip memories with no structured metadata — these are synthesized
+        # insight snippets with no deal identity, not actual stored deal records
+        if not company or not status:
+            continue
+
+        similar_deals.append({
+            "company": company,
+            "status": status,
+            "summary": m.get("text", "")[:300],
+            "score": m.get("score", m.get("similarity", None)),
+        })
+
+    # Cap at 5 — frontend shows 3 by default with a "See more" toggle
+    similar_deals = similar_deals[:5]
+
     return {
         "analysis": analysis,
         "memories_used": len(raw_memories),
         "memory_bank_id": HINDSIGHT_BANK_ID,
+        "similar_deals": similar_deals,
     }
 
 

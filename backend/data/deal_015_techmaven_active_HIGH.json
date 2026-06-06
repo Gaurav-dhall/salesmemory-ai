@@ -1,0 +1,46 @@
+{
+  "deal_id": "DEAL-015",
+  "company": "TechMaven Solutions",
+  "contact": "Pooja Iyer (Head of Product)",
+  "decision_maker": "Ravi Shankar (CEO)",
+  "deal_value": "$74,000",
+  "status": "ACTIVE",
+  "current_call": 3,
+  "risk_level": "HIGH",
+  "risk_reason": "Champion Pooja Iyer has resigned — no backup relationship built, CEO Ravi disengaged, deal at risk of going cold",
+  "days_active": 47,
+  "next_call_date": "2026-06-14",
+  "open_flags": [
+    "Champion Pooja Iyer resigned effective June 20 — replacement not yet named",
+    "CEO Ravi Shankar has never been on a call — single-threaded deal",
+    "No relationship with any other TechMaven stakeholder",
+    "Competitor HubSpot mentioned in last call with no counter"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-04-18",
+      "notes": "Pooja reached out to us proactively — she wants to overhaul their product analytics stack. Great pain: no visibility into feature adoption post-release. She is clearly the champion and very motivated. Did not ask about other stakeholders involved in the decision.",
+      "red_flags": ["did not multi-thread — only one relationship built", "CEO not introduced"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-05-03",
+      "notes": "Detailed requirements call with Pooja and two of her junior team members. Strong alignment on features. Pooja mentioned that CEO Ravi will need to approve budget but she said she will handle it. We trusted her. HubSpot mentioned briefly.",
+      "red_flags": ["CEO still not on call", "relying only on champion to close internally"],
+      "competitor_mentions": ["HubSpot"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-05-28",
+      "notes": "Pooja told us she is resigning in 3 weeks. She apologized and said she tried to brief her manager but CEO has not assigned a new product head yet. Ravi is aware of the evaluation but never met us. Deal is now in limbo.",
+      "red_flags": ["champion resigned — deal single-threaded with someone leaving", "no backup stakeholder relationship", "CEO aware but disengaged"],
+      "competitor_mentions": ["HubSpot"],
+      "sentiment": "declining"
+    }
+  ],
+  "lessons_learned": []
+}

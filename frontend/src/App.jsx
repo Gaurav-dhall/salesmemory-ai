@@ -14,7 +14,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/deal" element={<DealDetail />} />
+            <Route path="/deal/:deal_id" element={<DealDetail />} />
             <Route path="/patterns" element={<Patterns />} />
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>

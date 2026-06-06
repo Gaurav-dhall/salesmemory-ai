@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-008",
+  "company": "PayCore Systems",
+  "contact": "Arjun Mehta (Product Manager)",
+  "decision_maker": "Lisa Wong (VP Operations)",
+  "deal_value": "$88,000",
+  "status": "LOST",
+  "lost_reason": "Extended free trial used fully — prospect got value without buying, went with internal build",
+  "duration_days": 127,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-06-05",
+      "notes": "Great call. Arjun has a real pain — their payment reconciliation takes 3 days manually. Our tool automates it to 2 hours. He wants to do a free trial before committing. We agreed to 30 days. Lisa Wong not on call.",
+      "red_flags": ["decision maker not on call", "free trial agreed without success criteria"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-06-20",
+      "notes": "Trial check-in. Arjun says team is using it daily — very positive feedback. Asked to extend trial by 30 more days because their quarter end is coming. We said yes. No defined purchase criteria discussed.",
+      "red_flags": ["trial extended without commitment criteria", "no purchase timeline defined", "decision maker still absent"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-07-22",
+      "notes": "Second trial extension ended. Arjun now says Lisa wants to evaluate one more month because they are considering building internally. First time internal build mentioned. Trial now at 75 days total.",
+      "red_flags": ["internal build threat emerged", "trial at 75 days — dangerously long", "Lisa now involved but skeptical"],
+      "competitor_mentions": ["internal build"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-08-10",
+      "notes": "Call with Lisa finally. She says the trial proved it works but their engineering team can replicate 80% of it. She wants our pricing to reflect that we are competing with their own engineers. We dropped price by 20%. She said she will think about it.",
+      "red_flags": ["prospect using trial data to negotiate down", "internal build as pricing leverage", "20% discount given with no commitment"],
+      "competitor_mentions": ["internal build"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-09-08",
+      "notes": "Lost. Lisa decided to build internally. Arjun apologized privately — said Lisa felt 3 months of free trial was enough to spec out what to build. They extracted full product knowledge from our trial.",
+      "red_flags": [],
+      "competitor_mentions": ["internal build"],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "Free trials must have defined success criteria and purchase commitment before starting",
+    "Never extend trial more than once — second extension means they are extracting not evaluating",
+    "Get decision maker on Call 1 or delay trial start",
+    "Internal build threat = get executive alignment immediately, not a price negotiation",
+    "Trial longer than 45 days without signed intent = red flag, stop the trial"
+  ]
+}

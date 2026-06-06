@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-012",
+  "company": "Streamline Ops",
+  "contact": "Tanvi Shah (Operations Director)",
+  "decision_maker": "Marcus Lee (VP Finance)",
+  "deal_value": "$91,000",
+  "status": "WON",
+  "won_reason": "Structured pilot with defined success criteria converted cleanly — VP Finance signed off based on pilot results",
+  "duration_days": 89,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-06-10",
+      "notes": "Tanvi has a workflow automation need — approvals taking 5+ days causing revenue delays. She wants a pilot before committing. We agreed immediately but structured it: 30-day pilot, 3 specific success metrics agreed upfront: approval time under 24 hours, zero escalations to management, 90% team adoption. Marcus Lee introduced himself briefly and said if numbers prove it, he will sign.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-06-25",
+      "notes": "Pilot Day 15 check-in. Approval time already at 26 hours — close to target. Team adoption at 85%. One issue with Slack integration — fixed it within 4 hours. Tanvi is very happy. We documented everything with screenshots for Marcus.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-07-12",
+      "notes": "Pilot completed. Results: approval time at 18 hours (target was 24), zero escalations, 94% adoption (target was 90%). We sent Marcus a formal pilot results report with before/after metrics. Asked for a decision call next week.",
+      "red_flags": [],
+      "competitor_mentions": ["Monday.com"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-07-20",
+      "notes": "Marcus mentioned Monday.com was also evaluated. We sent a direct comparison on the 3 pilot metrics — Monday.com had not run a structured pilot so had no comparable data. Marcus appreciated the data-driven approach.",
+      "red_flags": [],
+      "competitor_mentions": ["Monday.com"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-09-06",
+      "notes": "WON. Marcus signed annual contract. He said the pilot report made it easy — he could defend the decision to the board with hard data. Tanvi said the quick bug fix during pilot showed we are a reliable partner.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Agree to pilot only with defined success criteria — never open-ended trials",
+    "Document pilot results formally and share with decision maker, not just champion",
+    "Quick responsiveness during pilot builds trust more than any sales pitch",
+    "Pilot results beat competitor claims — data from live use is the strongest proof",
+    "30-day structured pilot is better than 90-day open trial every time"
+  ]
+}

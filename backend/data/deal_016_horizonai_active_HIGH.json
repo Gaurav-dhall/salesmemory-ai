@@ -1,0 +1,62 @@
+{
+  "deal_id": "DEAL-016",
+  "company": "HorizonAI Inc",
+  "contact": "Karan Malhotra (Engineering Director)",
+  "decision_maker": "Sophie Laurent (COO)",
+  "deal_value": "$83,000",
+  "status": "ACTIVE",
+  "current_call": 5,
+  "risk_level": "HIGH",
+  "risk_reason": "Free trial requested with no success criteria — trial now at 60 days with no purchase commitment, internal build mentioned",
+  "days_active": 72,
+  "next_call_date": "2026-06-11",
+  "open_flags": [
+    "Trial running for 60 days — dangerously extended, no end date agreed",
+    "Internal build option mentioned by COO Sophie in last call",
+    "No purchase commitment criteria were set at trial start",
+    "Sophie has used the trial data to ask for 25% price reduction"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-03-25",
+      "notes": "Karan is evaluating our ML pipeline tool. Great product fit — their data team spends 60% of time on data prep. We agreed to a free trial. Did not define success criteria or end date upfront. Sophie Laurent dropped in briefly and said she was supportive.",
+      "red_flags": ["trial agreed without success criteria", "no end date defined"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-04-10",
+      "notes": "Trial check-in. Karan says team loves it — data prep time down 40%. Asked to extend trial by 30 more days because they want to test on their production dataset. We agreed. Sophie not on call.",
+      "red_flags": ["trial extended — second extension warning", "decision maker absent during extension decision"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-04-28",
+      "notes": "Trial at 35 days now. Karan says results are great — 55% reduction in data prep time. But Sophie now wants to evaluate cost. She joined briefly and asked if their engineering team could replicate our core features. We said it would take 6 months to build.",
+      "red_flags": ["internal build being evaluated", "decision maker asking about build vs buy"],
+      "competitor_mentions": ["internal build"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 4,
+      "date": "2026-05-15",
+      "notes": "Sophie asked for 25% price reduction based on trial data — she said they now know what they need and our price is 30% above what she expected. We gave 10% and added 2 months free support. She said she needs more.",
+      "red_flags": ["price negotiation using trial data as leverage", "discount given without commitment", "internal build still on table"],
+      "competitor_mentions": ["internal build"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2026-05-30",
+      "notes": "Trial is now 60 days old. Sophie says they need 2 more weeks. She now mentioned a vendor called Prefect that is 35% cheaper. No purchase commitment in sight. This deal feels like it is heading the same direction as PayCore.",
+      "red_flags": ["trial at 60 days — dangerously long", "new competitor introduced late", "still no purchase commitment"],
+      "competitor_mentions": ["Prefect", "internal build"],
+      "sentiment": "declining"
+    }
+  ],
+  "lessons_learned": []
+}

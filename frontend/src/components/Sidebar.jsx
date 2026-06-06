@@ -71,22 +71,21 @@ export default function Sidebar({ showBack = false }) {
       ) : (
         /* Expanded: logo + brand + collapse button */
         <div style={{
-          display: 'flex', alignItems: 'center', gap: 10,
+          display: 'flex', alignItems: 'center',
           padding: '20px 16px 20px 20px',
           borderBottom: '1px solid rgba(255,255,255,0.06)',
           minHeight: 72,
         }}>
           {/* Brand icon */}
-          <div
+          <img
+            src="/background-removed-background-removed.png"
+            alt="Logo"
             onClick={() => navigate('/dashboard')}
             style={{
-              width: 36, height: 36, background: 'var(--color-accent)', borderRadius: '50%',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              width: 40, height: 40,
               flexShrink: 0, cursor: 'pointer',
             }}
-          >
-            <Plus size={18} color="white" strokeWidth={2.5} />
-          </div>
+          />
 
           {/* Brand text */}
           <motion.div
@@ -96,11 +95,9 @@ export default function Sidebar({ showBack = false }) {
             style={{ flex: 1, overflow: 'hidden' }}
           >
             <div style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 15, fontWeight: 700, color: '#fff', whiteSpace: 'nowrap', lineHeight: 1.2 }}>
-              SalesMemory AI
+              SalesMemory <span style={{ color: '#3B82F6' }}>AI</span>
             </div>
-            <div style={{ fontSize: 10, color: '#64748B', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: 2 }}>
-              Enterprise Intelligence
-            </div>
+            
           </motion.div>
 
           {/* Collapse button */}
@@ -234,6 +231,7 @@ export default function Sidebar({ showBack = false }) {
                 margin: '0 auto',
               }}
               title="Powered by Hindsight"
+              onClick={() => window.open('https://hindsight.vectorize.io', '_blank')}
             >
               <Sparkles size={14} color="white" />
             </motion.div>
@@ -245,6 +243,7 @@ export default function Sidebar({ showBack = false }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className="hindsight-pill"
+              onClick={() => window.open('https://hindsight.vectorize.io', '_blank')}
             >
               <Sparkles size={14} />
               Powered by Hindsight

@@ -1,0 +1,45 @@
+{
+  "deal_id": "DEAL-017",
+  "company": "DeltaOps Technologies",
+  "contact": "Meera Pillai (VP Engineering)",
+  "decision_maker": "Tom Bradley (CEO)",
+  "deal_value": "$68,000",
+  "status": "ACTIVE",
+  "current_call": 3,
+  "risk_level": "MEDIUM",
+  "risk_reason": "Timeline slipped once, CEO not yet on a call — but Meera is strongly engaged and competitor counter-doc was sent",
+  "days_active": 39,
+  "next_call_date": "2026-06-16",
+  "open_flags": [
+    "Timeline slipped by 1 week — CEO Tom Bradley busy with board prep",
+    "CEO Tom Bradley still not on a direct call with us",
+    "Procurement process not yet discussed"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-04-28",
+      "notes": "Meera reached out — their CI/CD pipeline is breaking weekly causing delayed releases. Strong champion. She mentioned CEO Tom will need to approve. We asked to get Tom on Call 2. Meera agreed. Good start. Sent a custom ROI estimate showing 3x deployment reliability.",
+      "red_flags": ["CEO not on Call 1 — requested for Call 2"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-05-14",
+      "notes": "Tom could not join — board prep week. Meera joined alone. We used the time well — went deep on technical requirements and Meera is now a very strong internal advocate. She shared our ROI doc with Tom and said he reviewed it positively. One competitor came up: GitHub Actions.",
+      "red_flags": ["CEO missed Call 2 — still not directly engaged with us", "timeline slipped by 1 week"],
+      "competitor_mentions": ["GitHub Actions"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-05-29",
+      "notes": "Sent a GitHub Actions vs our product one-page comparison doc. Meera said it was very helpful and she shared it with Tom. Tom's verbal response through Meera was positive. Next call scheduled with Tom included. Timeline back on track.",
+      "red_flags": [],
+      "competitor_mentions": ["GitHub Actions"],
+      "sentiment": "positive"
+    }
+  ],
+  "lessons_learned": []
+}

@@ -1,0 +1,60 @@
+{
+  "deal_id": "DEAL-019",
+  "company": "BlueChip Analytics",
+  "contact": "Rahul Gupta (Head of BI)",
+  "decision_maker": "Natasha Patel (CFO)",
+  "deal_value": "$76,000",
+  "status": "ACTIVE",
+  "current_call": 5,
+  "risk_level": "LOW",
+  "risk_reason": "CFO engaged from Call 2, custom ROI delivered, weekly touchpoints maintained, procurement already started",
+  "days_active": 51,
+  "next_call_date": "2026-06-10",
+  "open_flags": [
+    "Waiting for final CFO signature — expected this week",
+    "Legal review in progress — no blockers flagged so far"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-04-16",
+      "notes": "Rahul reached out for BI dashboard solution. Pain: executive team has no real-time visibility into revenue metrics, relying on weekly reports. We immediately asked who else besides Rahul would be involved. He named CFO Natasha Patel and said she drives the budget. We requested she join Call 2.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-04-30",
+      "notes": "Natasha joined the full call. We focused on her priorities — CFO visibility into cash flow, receivables, and burn rate. Demo was tailored to her dashboard. She asked great questions about data security. We answered all of them with our compliance docs ready. She was visibly impressed.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-05-10",
+      "notes": "Sent custom ROI calculator showing $180k/year in saved analyst hours plus faster decision cycles. Natasha emailed same day saying the ROI case was compelling. Rahul said she is internally already sold. We asked Rahul to introduce us to procurement contact — he did it within 24 hours.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2026-05-22",
+      "notes": "Call with procurement contact Dilnoza — very smooth. She had only 2 standard questions about data processing agreements. We had our DPA ready. She said legal review would take 1 week. No competitor mentioned. Natasha attended the last 5 minutes to show executive sponsorship.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 5,
+      "date": "2026-06-04",
+      "notes": "Legal review completed — zero issues. Contract is now with Natasha for signature. She confirmed she will sign by June 10. Rahul says the internal energy is very positive. Annual prepay was agreed with 10% discount. This deal is as clean as it gets.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    }
+  ],
+  "lessons_learned": []
+}

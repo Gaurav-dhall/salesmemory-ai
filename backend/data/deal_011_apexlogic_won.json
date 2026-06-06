@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-011",
+  "company": "ApexLogic Pvt Ltd",
+  "contact": "Rohan Desai (Engineering Manager)",
+  "decision_maker": "Kavita Menon (CTO)",
+  "deal_value": "$82,000",
+  "status": "WON",
+  "won_reason": "Procurement and legal engaged early, smooth approval process, closed in 75 days",
+  "duration_days": 75,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-07-01",
+      "notes": "Excellent discovery call. Rohan has a strong pain around test automation — 40% of deployments failing QA. CTO Kavita joined the last 15 minutes. We asked directly: who else needs to approve this? She mentioned procurement team and legal. We asked for their names and timelines immediately.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-07-15",
+      "notes": "Sent custom ROI calculator showing 60% reduction in QA failures within 90 days. Rohan loved it. More importantly, we sent our standard vendor contract to their procurement contact Deepa proactively — before she even asked. Kavita was impressed by our process maturity.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-07-30",
+      "notes": "Call with Kavita, Rohan, and Deepa from procurement. Deepa had already reviewed our contract and had only 2 minor questions. We resolved them live on the call. Legal review was fast because we had sent pre-approved contract language. Kavita asked about annual prepay discount.",
+      "red_flags": [],
+      "competitor_mentions": ["CircleCI"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-08-10",
+      "notes": "Addressed CircleCI comparison directly — sent a one-page feature comparison doc showing 3 differentiators. Kavita appreciated the transparency. Offered 12% discount for annual prepay. She said she would check with CFO.",
+      "red_flags": [],
+      "competitor_mentions": ["CircleCI"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-09-13",
+      "notes": "WON. CFO approved the annual prepay. Contract signed. Kavita said our procurement readiness and ROI calculator were the two things that made this decision easy.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "won"
+    }
+  ],
+  "lessons_learned": [
+    "Ask about procurement and legal in Call 1 — every time",
+    "Send vendor contract proactively before procurement asks",
+    "Custom ROI calculator is a deal accelerator — build it for every deal above $50k",
+    "Annual prepay offer works better when paired with concrete ROI data",
+    "Address competitor comparisons head-on with a clean one-page doc"
+  ]
+}

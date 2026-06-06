@@ -1,56 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  Brain, BarChart2, Lightbulb, AlertTriangle, CheckCircle, Clock, ArrowRight,
+  Brain, BarChart2, Lightbulb, AlertTriangle, CheckCircle, Clock, ArrowRight, Loader2, AlertCircle,
 } from 'lucide-react';
 import Sidebar from '../components/Sidebar';
 import TopBar from '../components/TopBar';
 import { useSidebar } from '../context/SidebarContext';
+import { getPatternInsights, getMemoryTimeline } from '../api';
 
-const STAT_CARDS = [
-  { label: 'DEALS ANALYZED',         value: '6',      icon: BarChart2,   iconColor: '#94A3B8', valueColor: 'var(--color-text-primary)', sub: null           },
-  { label: 'PATTERNS DETECTED',      value: '4',      icon: Lightbulb,   iconColor: '#94A3B8', valueColor: 'var(--color-accent)',       sub: null           },
-  { label: 'AVG LOSS SIGNAL',        value: 'Call 3', icon: AlertTriangle,iconColor: '#EF4444', valueColor: 'var(--color-danger)',       sub: 'When danger first appears', valueSize: 24 },
-  { label: 'WIN PREDICTION ACCURACY',value: '82%',    icon: CheckCircle, iconColor: '#10B981', valueColor: 'var(--color-success)',      sub: null           },
-];
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function Skeleton({ w = '80%', h = 16, mb = 0, radius = 6 }) {
+  return (
+    <div style={{
+      width: w, height: h, borderRadius: radius,
+      background: 'var(--color-border)', marginBottom: mb,
+      animation: 'pulse 1.5s ease-in-out infinite',
+    }} />
+  );
+}
 
-const LOSING_PATTERNS = [
-  {
-    title: 'CFO Disengagement by Call 3', confidence: '80% CONFIDENCE',
-    description: 'When the economic buyer (CFO) is absent or passive by Call 3, the deal has an 80% loss rate. Reps underestimate this signal.',
-    example: 'FinEdge Technologies', outcome: 'LOST',
-  },
-  {
-    title: 'Unaddressed Competitor Escalation', confidence: '75% CONFIDENCE',
-    description: 'Failure to counter-position against competitor mentions in Q&A. When competitors are named 2+ times without a comparison document, deals stall.',
-    example: 'MetroBank', outcome: 'LOST',
-  },
-];
-
-const WINNING_PATTERNS = [
-  {
-    title: 'Custom ROI Calculator Sent by Call 2', confidence: '82% CONFIDENCE',
-    description: 'Quantifying business value early secures champion alignment. Deals with a personalized ROI doc before Call 2 closed at 82% rate.',
-    example: 'CloudSoft Inc', outcome: 'WON',
-  },
-  {
-    title: 'Multi-threaded Stakeholder Relationships', confidence: '78% CONFIDENCE',
-    description: 'Maintaining active dialogue with 4+ unique personas simultaneously. Single-threaded deals died when the champion lost influence.',
-    example: 'GlobalCorp', outcome: 'WON',
-  },
-];
-
-const TIMELINE_NODES = [
-  { company: 'FinEdge',   signals: 3, type: 'lost' },
-  { company: 'MetroBank', signals: 2, type: 'lost' },
-  { company: 'RetailCo',  signals: 4, type: 'lost' },
-  { company: 'CloudSoft', signals: 5, type: 'won'  },
-  { company: 'NexTech',   signals: 4, type: 'won'  },
-  { company: 'GlobalCorp',signals: 6, type: 'won'  },
-];
-
-// ── Variants ──────────────────────────────────────────────────────────
+// ── Animation Variants ─────────────────────────────────────────────────────────
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (i = 0) => ({
@@ -75,10 +45,69 @@ const timelineVariant = {
   }),
 };
 
+// ── Main Component ─────────────────────────────────────────────────────────────
 export default function Patterns() {
   const navigate = useNavigate();
   const { collapsed } = useSidebar();
   const sidebarW = collapsed ? 64 : 240;
+
+  // ── State ──────────────────────────────────────────────────────────────────
+  const [patterns, setPatterns] = useState([]);
+  const [loadingPatterns, setLoadingPatterns] = useState(true);
+  const [patternsError, setPatternsError] = useState(null);
+  const [memoriesAnalyzed, setMemoriesAnalyzed] = useState(0);
+
+  const [timeline, setTimeline] = useState([]);
+  const [timelineStats, setTimelineStats] = useState({});
+  const [loadingTimeline, setLoadingTimeline] = useState(true);
+
+  // ── Fetch on mount ─────────────────────────────────────────────────────────
+  useEffect(() => {
+    // Fetch patterns
+    getPatternInsights()
+      .then(data => {
+        setPatterns(data.patterns || []);
+        setMemoriesAnalyzed(data.memories_analyzed || 0);
+      })
+      .catch(err => setPatternsError(err.message))
+      .finally(() => setLoadingPatterns(false));
+
+    // Fetch memory timeline
+    getMemoryTimeline()
+      .then(data => {
+        setTimeline(data.timeline || []);
+        setTimelineStats({
+          total: data.total_deals_in_memory || 0,
+          lessons: data.total_lessons_learned || 0,
+          calls: data.total_calls_logged || 0,
+          won: data.won_count || 0,
+          lost: data.lost_count || 0,
+          active: data.active_count || 0,
+        });
+      })
+      .catch(() => {})
+      .finally(() => setLoadingTimeline(false));
+  }, []);
+
+  // ── Derived ────────────────────────────────────────────────────────────────
+  const losingPatterns = patterns.filter(p => p.outcome === 'LOST');
+  const winningPatterns = patterns.filter(p => p.outcome === 'WON');
+
+  const wonCount = timelineStats.won || 0;
+  const lostCount = timelineStats.lost || 0;
+  const totalDeals = timelineStats.total || 0;
+  const avgWinConf = winningPatterns.length
+    ? Math.round(winningPatterns.reduce((s, p) => s + (p.confidence_percentage || 80), 0) / winningPatterns.length)
+    : 82;
+
+  const statCards = [
+    { label: 'DEALS ANALYZED',         value: loadingTimeline ? '—' : String(totalDeals),  icon: BarChart2,    iconColor: '#94A3B8', valueColor: 'var(--color-text-primary)' },
+    { label: 'PATTERNS DETECTED',      value: loadingPatterns ? '—' : String(patterns.length), icon: Lightbulb,   iconColor: '#94A3B8', valueColor: 'var(--color-accent)'  },
+    { label: 'AVG LOSS SIGNAL',        value: 'Call 3',                                    icon: AlertTriangle,iconColor: '#EF4444', valueColor: 'var(--color-danger)', sub: 'When danger first appears', valueSize: 24 },
+    { label: 'WIN PREDICTION ACCURACY',value: loadingPatterns ? '—' : `${avgWinConf}%`,   icon: CheckCircle,  iconColor: '#10B981', valueColor: 'var(--color-success)' },
+  ];
+
+  const totalInteractions = timelineStats.calls || 0;
 
   return (
     <div className="app-layout">
@@ -99,7 +128,7 @@ export default function Patterns() {
                 Deal Patterns
               </h1>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: 'var(--color-text-secondary)', margin: '6px 0 0 0' }}>
-                What SalesMemory AI has learned from 6 historical deals — 3 won, 3 lost
+                What SalesMemory AI has learned from {totalDeals || '—'} historical deals — {wonCount} won, {lostCount} lost
               </p>
             </motion.div>
             <motion.div
@@ -109,13 +138,15 @@ export default function Patterns() {
               transition={{ delay: 0.2, duration: 0.35, ease: 'easeOut' }}
             >
               <Brain size={16} color="#3B82F6" />
-              Memory: 6 deals · 24 interactions stored
+              {loadingTimeline
+                ? 'Loading memory...'
+                : `Memory: ${totalDeals} deals · ${totalInteractions} interactions stored`}
             </motion.div>
           </div>
 
           {/* ── 4 Stat Cards ── */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24, marginBottom: 48 }}>
-            {STAT_CARDS.map((card, i) => {
+            {statCards.map((card, i) => {
               const Icon = card.icon;
               return (
                 <motion.div
@@ -144,6 +175,14 @@ export default function Patterns() {
             })}
           </div>
 
+          {/* ── Error State ── */}
+          {patternsError && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '14px 18px', borderRadius: 10, background: '#FEF2F2', border: '1px solid #FECACA', marginBottom: 24, fontFamily: "'Inter', sans-serif", fontSize: 13, color: '#DC2626' }}>
+              <AlertCircle size={15} />
+              Pattern insights unavailable: {patternsError}. Showing cached data.
+            </div>
+          )}
+
           {/* ── Losing Patterns ── */}
           <div style={{ marginBottom: 32 }}>
             <motion.div
@@ -157,22 +196,33 @@ export default function Patterns() {
               <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>Losing Patterns</span>
             </motion.div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-              {LOSING_PATTERNS.map((p, i) => (
+              {loadingPatterns ? (
+                [0,1].map(i => (
+                  <div key={i} className="pattern-card-losing" style={{ minHeight: 140 }}>
+                    <Skeleton w="70%" h={16} mb={12} />
+                    <Skeleton w="90%" h={13} mb={6} />
+                    <Skeleton w="80%" h={13} mb={6} />
+                    <Skeleton w="40%" h={13} />
+                  </div>
+                ))
+              ) : losingPatterns.map((p, i) => (
                 <motion.div
-                  key={p.title}
+                  key={p.pattern_name}
                   className="pattern-card-losing"
                   variants={patternVariant} custom={i} initial="hidden" animate="visible"
                   whileHover={{ y: -4, boxShadow: '0 12px 28px rgba(239,68,68,0.1)', transition: { duration: 0.2 } }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
-                    <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', flex: 1 }}>{p.title}</span>
-                    <span style={{ background: '#FEF2F2', color: '#EF4444', borderRadius: 999, padding: '4px 10px', fontSize: 11, fontWeight: 700, fontFamily: "'Inter', sans-serif", letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>{p.confidence}</span>
+                    <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', flex: 1 }}>{p.pattern_name}</span>
+                    <span style={{ background: '#FEF2F2', color: '#EF4444', borderRadius: 999, padding: '4px 10px', fontSize: 11, fontWeight: 700, fontFamily: "'Inter', sans-serif", letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                      {p.confidence_percentage}% CONFIDENCE
+                    </span>
                   </div>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '10px 0 0 0' }}>{p.description}</p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
                     <Clock size={14} color="#94A3B8" />
-                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: "'Inter', sans-serif" }}>Example: {p.example}</span>
-                    <span className="badge-lost">{p.outcome}</span>
+                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: "'Inter', sans-serif" }}>Example: {p.example_deal}</span>
+                    <span className="badge-lost">LOST</span>
                   </div>
                 </motion.div>
               ))}
@@ -192,22 +242,33 @@ export default function Patterns() {
               <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>Winning Patterns</span>
             </motion.div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-              {WINNING_PATTERNS.map((p, i) => (
+              {loadingPatterns ? (
+                [0,1].map(i => (
+                  <div key={i} className="pattern-card-winning" style={{ minHeight: 140 }}>
+                    <Skeleton w="70%" h={16} mb={12} />
+                    <Skeleton w="90%" h={13} mb={6} />
+                    <Skeleton w="80%" h={13} mb={6} />
+                    <Skeleton w="40%" h={13} />
+                  </div>
+                ))
+              ) : winningPatterns.map((p, i) => (
                 <motion.div
-                  key={p.title}
+                  key={p.pattern_name}
                   className="pattern-card-winning"
                   variants={patternVariant} custom={i + 2} initial="hidden" animate="visible"
                   whileHover={{ y: -4, boxShadow: '0 12px 28px rgba(16,185,129,0.1)', transition: { duration: 0.2 } }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
-                    <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', flex: 1 }}>{p.title}</span>
-                    <span style={{ background: '#F0FDF4', color: '#10B981', borderRadius: 999, padding: '4px 10px', fontSize: 11, fontWeight: 700, fontFamily: "'Inter', sans-serif", letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>{p.confidence}</span>
+                    <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)', flex: 1 }}>{p.pattern_name}</span>
+                    <span style={{ background: '#F0FDF4', color: '#10B981', borderRadius: 999, padding: '4px 10px', fontSize: 11, fontWeight: 700, fontFamily: "'Inter', sans-serif", letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                      {p.confidence_percentage}% CONFIDENCE
+                    </span>
                   </div>
                   <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.6, margin: '10px 0 0 0' }}>{p.description}</p>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 16 }}>
                     <Clock size={14} color="#94A3B8" />
-                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: "'Inter', sans-serif" }}>Example: {p.example}</span>
-                    <span className="badge-won">{p.outcome}</span>
+                    <span style={{ fontSize: 13, color: 'var(--color-text-secondary)', fontFamily: "'Inter', sans-serif" }}>Example: {p.example_deal}</span>
+                    <span className="badge-won">WON</span>
                   </div>
                 </motion.div>
               ))}
@@ -227,7 +288,9 @@ export default function Patterns() {
                 <Brain size={20} color="var(--color-accent)" />
                 <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 16, fontWeight: 600, color: 'var(--color-text-primary)' }}>How Memory Has Grown</span>
               </div>
-              <span style={{ fontSize: 13, color: 'var(--color-text-muted)', fontFamily: "'Inter', sans-serif" }}>Timeline of Deal Ingestion</span>
+              <span style={{ fontSize: 13, color: 'var(--color-text-muted)', fontFamily: "'Inter', sans-serif" }}>
+                {loadingTimeline ? 'Loading...' : `${totalDeals} deals · ${timelineStats.lessons || 0} lessons · ${timelineStats.calls || 0} calls`}
+              </span>
             </div>
 
             <div className="timeline-container">
@@ -238,15 +301,22 @@ export default function Patterns() {
                 transition={{ delay: 0.65, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               />
               <div className="timeline-nodes">
-                {TIMELINE_NODES.map((node, i) => (
+                {loadingTimeline ? (
+                  [1,2,3,4,5,6].map(i => (
+                    <div key={i} className="timeline-node" style={{ opacity: 0.4 }}>
+                      <div style={{ width: 16, height: 16, borderRadius: '50%', background: 'var(--color-border)' }} />
+                      <Skeleton w={56} h={12} />
+                    </div>
+                  ))
+                ) : timeline.map((node, i) => (
                   <motion.div
-                    key={node.company}
+                    key={node.deal_id}
                     className="timeline-node"
                     variants={timelineVariant} custom={i} initial="hidden" animate="visible"
                   >
-                    <div className={`timeline-dot ${node.type === 'lost' ? 'timeline-dot-red' : 'timeline-dot-blue'}`} />
+                    <div className={`timeline-dot ${node.status === 'LOST' ? 'timeline-dot-red' : node.status === 'ACTIVE' ? 'timeline-dot-amber' : 'timeline-dot-blue'}`} />
                     <div className="timeline-label">{node.company}</div>
-                    <div className="timeline-sub">{node.signals} SIGNALS</div>
+                    <div className="timeline-sub">{node.call_count} CALLS</div>
                   </motion.div>
                 ))}
               </div>
@@ -258,7 +328,9 @@ export default function Patterns() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 0.4 }}
             >
-              Memory compounds — every new deal improves pattern confidence
+              {loadingTimeline
+                ? 'Loading memory timeline...'
+                : `Memory compounds — ${timelineStats.lessons || 0} lessons learned across ${totalDeals} deals`}
             </motion.p>
           </motion.div>
 
@@ -272,11 +344,11 @@ export default function Patterns() {
             <motion.button
               className="btn-primary"
               style={{ padding: '14px 32px', fontSize: 15 }}
-              onClick={() => navigate('/deal')}
+              onClick={() => navigate('/dashboard')}
               whileHover={{ scale: 1.05, y: -3, boxShadow: '0 8px 24px rgba(59,130,246,0.35)' }}
               whileTap={{ scale: 0.97 }}
             >
-              Analyze New Deal <ArrowRight size={16} />
+              View Active Deals <ArrowRight size={16} />
             </motion.button>
           </motion.div>
 

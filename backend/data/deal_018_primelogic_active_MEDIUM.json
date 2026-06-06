@@ -1,0 +1,52 @@
+{
+  "deal_id": "DEAL-018",
+  "company": "PrimeLogic Corp",
+  "contact": "Ananya Krishnan (Head of Data Science)",
+  "decision_maker": "James Wu (CTO)",
+  "deal_value": "$59,000",
+  "status": "ACTIVE",
+  "current_call": 4,
+  "risk_level": "MEDIUM",
+  "risk_reason": "Competitor mentioned once with no counter yet sent — but CTO is engaged and custom ROI calculator already delivered",
+  "days_active": 44,
+  "next_call_date": "2026-06-13",
+  "open_flags": [
+    "Databricks mentioned in last call — no comparison doc sent yet",
+    "Procurement contact name not yet obtained"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-04-23",
+      "notes": "Ananya has a strong need for automated model monitoring — their ML models drift and they only find out from customer complaints. CTO James Wu was on the call from the start. We asked about procurement process early — Ananya said they have a standard vendor form, less than $100k needs only CTO approval. Very clean buying process.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-05-07",
+      "notes": "Sent custom ROI calculator — showed 80% reduction in model incident response time, saving estimated $200k/year in engineer hours. James reviewed it before the call and said the numbers were conservative but credible. He asked for a technical deep dive next.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-05-21",
+      "notes": "Technical deep dive with Ananya and two ML engineers. Went very well. Ananya mentioned that a colleague used Databricks MLflow for similar use cases. We acknowledged it but did not have a comparison doc ready. Noted to send one.",
+      "red_flags": ["Databricks mentioned — comparison doc not yet sent"],
+      "competitor_mentions": ["Databricks"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 4,
+      "date": "2026-06-04",
+      "notes": "Call with James to discuss commercial terms. He liked everything and asked about payment terms — monthly vs annual. We mentioned the annual prepay discount. He said he is leaning toward annual. Procurement form not yet filled — need to get that started next week.",
+      "red_flags": ["procurement form not yet started"],
+      "competitor_mentions": ["Databricks"],
+      "sentiment": "positive"
+    }
+  ],
+  "lessons_learned": []
+}

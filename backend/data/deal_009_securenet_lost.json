@@ -1,0 +1,51 @@
+{
+  "deal_id": "DEAL-009",
+  "company": "SecureNet Inc",
+  "contact": "Priya Sharma (CISO)",
+  "decision_maker": "Robert Chen (CEO)",
+  "deal_value": "$56,000",
+  "status": "LOST",
+  "lost_reason": "Rep gave repeated discounts — prospect treated it as weakness signal and went with competitor",
+  "duration_days": 78,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-08-15",
+      "notes": "Priya is evaluating security tools post a minor breach incident. Very motivated buyer. CEO Robert Chen is fully supportive. Pain is real. First call went great — they understand the value clearly. No competitor mentioned.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-08-28",
+      "notes": "Priya came back with budget pushback — said $56k is 15% above their budget. Asked if we can do $48k. We offered $51k to show goodwill. She said she will check with Robert. No real budget evidence shared.",
+      "red_flags": ["discount given without budget proof", "negotiation started at Call 2 — too early"],
+      "competitor_mentions": [],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-09-10",
+      "notes": "Robert joined the call. He said $51k is still high and mentioned CrowdStrike is offering $44k for similar coverage. Asked us to match. We came down to $47k and added 3 months extra support. Robert said he will decide this week.",
+      "red_flags": ["second discount given — now at 16% below original", "competitor used as pricing lever", "added value instead of holding price"],
+      "competitor_mentions": ["CrowdStrike"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-09-25",
+      "notes": "Lost. Robert chose CrowdStrike. Priya told us off the record that Robert said our repeated discounting made him nervous — felt like we were hiding something or desperate. He trusted CrowdStrike more because they held their price.",
+      "red_flags": [],
+      "competitor_mentions": ["CrowdStrike"],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "Discounting more than once signals desperation — hold price after first concession",
+    "Never discount without getting something in return — commitment, timeline, reference",
+    "Competitor pricing claims must be verified — do not react without proof",
+    "Price confidence = product confidence in buyer's mind",
+    "Adding extras instead of dropping price is better but still shows weakness if combined with discount"
+  ]
+}

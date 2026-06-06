@@ -717,6 +717,11 @@ select.form-input {
   box-shadow: 0 0 0 2px #3B82F6;
 }
 
+.timeline-dot-amber {
+  background-color: #F59E0B;
+  box-shadow: 0 0 0 2px #F59E0B;
+}
+
 .timeline-label {
   font-size: 13px;
   font-weight: 600;
@@ -912,4 +917,15 @@ select.form-input {
 }
 [data-theme="dark"] .btn-primary:hover {
   background: #1D4ED8;
+}
+
+/* ─── Utility Keyframes ─────────────────────────────────────── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
 }

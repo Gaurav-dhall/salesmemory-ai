@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Bell, HelpCircle, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import { checkHealth } from '../api';
 
 export default function TopBar({ pageTitle }) {
   const { dark, toggle } = useTheme();
+
+  // ── Backend health indicator ─────────────────────────────────────────────
+  const [health, setHealth] = useState('checking'); // 'ok' | 'degraded' | 'down' | 'checking'
+  useEffect(() => {
+    checkHealth()
+      .then(data => setHealth(data?.hindsight?.reachable ? 'ok' : 'degraded'))
+      .catch(() => setHealth('down'));
+  }, []);
+
+  const healthColor = health === 'ok' ? '#10B981' : health === 'degraded' ? '#F59E0B' : health === 'down' ? '#EF4444' : '#94A3B8';
+  const healthTitle = health === 'ok' ? 'Backend & Hindsight connected' : health === 'degraded' ? 'Hindsight memory unavailable' : health === 'down' ? 'Backend offline' : 'Checking connection...';
 
   return (
     <div className="top-bar">
@@ -130,6 +142,19 @@ export default function TopBar({ pageTitle }) {
             </AnimatePresence>
           </motion.div>
         </motion.button>
+
+        {/* ── Health status dot ── */}
+        <motion.div
+          title={healthTitle}
+          animate={{ scale: health === 'checking' ? [1, 1.3, 1] : 1 }}
+          transition={health === 'checking' ? { duration: 1.2, repeat: Infinity, ease: 'easeInOut' } : {}}
+          style={{
+            width: 10, height: 10, borderRadius: '50%',
+            background: healthColor,
+            flexShrink: 0, cursor: 'help',
+            boxShadow: `0 0 0 2px ${healthColor}33`,
+          }}
+        />
 
         <div className="avatar" aria-label="User Avatar">A</div>
       </div>

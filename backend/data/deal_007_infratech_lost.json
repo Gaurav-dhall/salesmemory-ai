@@ -1,0 +1,59 @@
+{
+  "deal_id": "DEAL-007",
+  "company": "InfraTech Solutions",
+  "contact": "Vikram Nair (Head of Infrastructure)",
+  "decision_maker": "Sunita Rao (CFO)",
+  "deal_value": "$71,000",
+  "status": "LOST",
+  "lost_reason": "Deal stalled in legal review — procurement introduced too late, competitor moved faster",
+  "duration_days": 112,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-07-10",
+      "notes": "Strong discovery call. Vikram is the clear champion — very excited about our monitoring stack. Pain: their on-prem infra is crashing 2x per month. CFO Sunita not on call but Vikram says she trusts him. Procurement not mentioned.",
+      "red_flags": ["CFO not on call", "procurement team not mentioned"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-07-25",
+      "notes": "Technical deep dive with Vikram and his team. They loved the demo. Asked us to prepare a formal proposal. Still no mention of procurement or legal. Sent proposal directly to Vikram.",
+      "red_flags": ["proposal sent without involving procurement", "no legal discussion"],
+      "competitor_mentions": ["Datadog"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-08-12",
+      "notes": "Vikram says procurement team has now flagged our proposal — they want 3 vendor quotes. This is the first time procurement is involved. Datadog already submitted their quote 2 weeks ago. We are behind.",
+      "red_flags": ["procurement introduced at Call 3 — too late", "competitor already in procurement process", "timeline slipping"],
+      "competitor_mentions": ["Datadog"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-08-28",
+      "notes": "Legal review started. Our standard contract has 3 clauses procurement flagged. Datadog apparently has a pre-approved vendor contract. CFO Sunita now involved but leaning toward Datadog because of smoother procurement process.",
+      "red_flags": ["legal review flagging our contract", "CFO now engaged but biased toward competitor", "procurement friction"],
+      "competitor_mentions": ["Datadog"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-09-30",
+      "notes": "Lost. Sunita chose Datadog — not because of features but because procurement process was faster and legal review was pre-cleared. Vikram was upset but had no power.",
+      "red_flags": [],
+      "competitor_mentions": ["Datadog"],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "Ask about procurement process in Call 1 — never assume champion controls the buy",
+    "Introduce procurement team by Call 2 maximum",
+    "Get legal review started early — contract friction kills deals",
+    "If competitor is already in procurement, you are already behind",
+    "CFO trust in champion does not mean champion controls final decision"
+  ]
+}

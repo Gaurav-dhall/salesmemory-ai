@@ -1,0 +1,68 @@
+{
+  "deal_id": "DEAL-010",
+  "company": "DataBridge Corp",
+  "contact": "Neha Joshi (Data Engineering Lead)",
+  "decision_maker": "Committee — CTO, CFO, VP Ops",
+  "deal_value": "$99,000",
+  "status": "LOST",
+  "lost_reason": "Buying committee could not reach consensus — deal died in internal politics, no decision made",
+  "duration_days": 143,
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2024-05-02",
+      "notes": "Neha reached out to us — she has a strong use case for our data pipeline tool. Pain: 6 hour ETL jobs crashing weekly. She is very excited. Mentioned that CTO, CFO, and VP Ops all need to sign off. We did not dig into their individual priorities.",
+      "red_flags": ["3-person committee — no clear single decision maker", "individual stakeholder priorities not explored"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2024-05-20",
+      "notes": "Demo call with Neha and CTO Aryan. CTO focused entirely on security and data residency — topics we were not prepared for. He wants data to stay in India region. We had to check internally. Neha tried to redirect to features but CTO was skeptical.",
+      "red_flags": ["CTO has different priority than champion", "not prepared for security questions", "data residency concern unresolved"],
+      "competitor_mentions": ["Fivetran"],
+      "sentiment": "neutral"
+    },
+    {
+      "call_number": 3,
+      "date": "2024-06-08",
+      "notes": "CFO Rekha joined. She only cares about total cost of ownership over 3 years — asked for detailed pricing model which we did not have ready. CTO still waiting on data residency answer. Neha is frustrated that meetings keep introducing new concerns.",
+      "red_flags": ["CFO has different priority than CTO and champion", "no 3-year TCO model prepared", "multiple unresolved concerns piling up", "champion losing internal credibility"],
+      "competitor_mentions": ["Fivetran", "Airbyte"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 4,
+      "date": "2024-06-28",
+      "notes": "VP Ops Suresh joined this time. He wants to know about implementation timeline and who owns post-go-live support. Now we have 4 different stakeholders with 4 different concerns. Neha says internal alignment is difficult. No decision timeline given.",
+      "red_flags": ["4th stakeholder with new concerns", "no internal alignment", "no decision timeline", "deal is stalling"],
+      "competitor_mentions": ["Airbyte"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 5,
+      "date": "2024-07-20",
+      "notes": "Neha says the committee met internally and could not agree — CTO wants to delay until data residency is confirmed, CFO wants better pricing, VP Ops wants a proof of concept first. She is still our champion but has no power to break the deadlock.",
+      "red_flags": ["committee deadlock", "champion powerless", "3 unresolved blockers simultaneously"],
+      "competitor_mentions": ["Fivetran"],
+      "sentiment": "declining"
+    },
+    {
+      "call_number": 6,
+      "date": "2024-09-22",
+      "notes": "Lost — by inaction. Company decided to delay the project by 6 months and revisit in Q1. No competitor won — we simply lost to no decision. Neha apologized. The committee could never align.",
+      "red_flags": [],
+      "competitor_mentions": [],
+      "sentiment": "lost"
+    }
+  ],
+  "lessons_learned": [
+    "Multi-stakeholder deal needs individual discovery with each stakeholder in Call 1-2",
+    "Map each committee member's priority before the group demo",
+    "No decision is still a loss — committee deals need a single executive sponsor to break ties",
+    "If committee has 3+ members with different concerns, propose a pre-alignment meeting before group calls",
+    "Champion with no power to decide is a risk factor — identify who has the actual veto",
+    "Data residency and security questions must be answered by Call 2 or deal slows permanently"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "deal_id": "DEAL-014",
+  "company": "GlobalBank Corp",
+  "contact": "Amit Verma (VP Technology)",
+  "decision_maker": "David Kim (CFO)",
+  "deal_value": "$97,000",
+  "status": "ACTIVE",
+  "current_call": 4,
+  "risk_level": "HIGH",
+  "risk_reason": "CFO David Kim not seen since Call 1, 2 competitor mentions with no counter-strategy sent, timeline slipped once",
+  "days_active": 58,
+  "next_call_date": "2026-06-12",
+  "open_flags": [
+    "CFO David Kim missed Call 2 and Call 3 — disengaged at critical ROI stage",
+    "Salesforce and SAP both mentioned — no comparison doc sent yet",
+    "Timeline slipped by 2 weeks — Amit said David is busy with quarter close"
+  ],
+  "calls": [
+    {
+      "call_number": 1,
+      "date": "2026-04-09",
+      "notes": "Strong opening call. Amit Verma has a clear pain — manual vendor payment reconciliation taking 4 days per month. CFO David Kim joined for 10 minutes, said ROI would be the deciding factor, then dropped. Amit confirmed budget exists. Seemed very promising.",
+      "red_flags": ["CFO left early — ROI not explored", "budget not formally confirmed"],
+      "competitor_mentions": [],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 2,
+      "date": "2026-04-25",
+      "notes": "Demo call with Amit and his team. Went very well technically. David Kim did not show up — Amit said he was in another meeting. Salesforce was mentioned as something David had seen at a conference. We said we would send a comparison. Have not sent it yet.",
+      "red_flags": ["CFO absent again", "competitor mentioned — no counter sent"],
+      "competitor_mentions": ["Salesforce"],
+      "sentiment": "positive"
+    },
+    {
+      "call_number": 3,
+      "date": "2026-05-12",
+      "notes": "Check-in call. Amit says David wants to push the decision by 2 weeks — quarter close is hectic. SAP also now being evaluated apparently. We have still not sent the competitor comparison doc or the custom ROI model. Amit is still warm but timeline is slipping.",
+      "red_flags": ["timeline slipped", "second competitor mentioned", "ROI model and competitor doc still not sent"],
+      "competitor_mentions": ["Salesforce", "SAP"],
+      "sentiment": "neutral"
+    }
+  ],
+  "lessons_learned": []
+}
