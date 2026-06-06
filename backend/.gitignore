@@ -1,3 +1,13 @@
+# Virtual Environment
+venv/
+env/
 .env
-test
-venv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# VS Code
+.vscode/
