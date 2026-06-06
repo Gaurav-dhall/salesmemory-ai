@@ -29,10 +29,11 @@ app = FastAPI(title="SalesMemory AI", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://salesmemory-ai.vercel.app/",
+    allow_origins=["https://salesmemory-ai.vercel.app",
         "http://localhost:5173" ],
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=False,
 )
 
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
