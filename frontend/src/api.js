@@ -1,7 +1,7 @@
 // src/api.js — Centralized API utility for SalesMemory AI
 // All backend calls go through here. Change BASE_URL once to switch environments.
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 async function request(path, { method = 'GET', body } = {}) {
   const opts = {
